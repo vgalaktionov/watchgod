@@ -144,7 +144,7 @@ def run_process(path: Union[Path, str], target: Callable, *,
                 args: Tuple=(),
                 kwargs: Dict[str, Any]=None,
                 callback: Callable[[Set[Tuple[Change, str]]], None]=None,
-                watcher_cls: Type[AllWatcher]=PythonWatcher,
+                watcher_cls: Type[AllWatcher]=DefaultWatcher,
                 debounce=400,
                 min_sleep=100):
     """
@@ -166,7 +166,7 @@ async def arun_process(path: Union[Path, str], target: Callable, *,
                        args: Tuple[Any]=(),
                        kwargs: Dict[str, Any]=None,
                        callback: Callable[[Set[Tuple[Change, str]]], Awaitable]=None,
-                       watcher_cls: Type[AllWatcher]=PythonWatcher,
+                       watcher_cls: Type[AllWatcher]=DefaultWatcher,
                        debounce=400,
                        min_sleep=100):
     """
